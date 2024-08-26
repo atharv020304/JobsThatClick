@@ -16,11 +16,17 @@ config({path: "./config/config.env"})
 
 //middleware to connect fend and bend
 app.use(cors({
-    origin: ["http://localhost:5173"],
+    origin: ["https://jobsthatclick-1.onrender.com"],
     methods: ["GET", "POST","PUT","DELETE"],
     credentials: true,
 })
 );
+// app.use(cors({
+//     origin: ["http://localhost:5173"],
+//     methods: ["GET", "POST","PUT","DELETE"],
+//     credentials: true,
+// })
+// );
 
 // middleware to get access to tokens 
 app.use(cookieParser())
