@@ -1,11 +1,15 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
       '/api': {
-        target: 'https://jobsthatclick.onrender.com/',
+        target: 'https://jobsthatclick.onrender.com',
         changeOrigin: true,
-        // Do not use 
+        // Keep the /api prefix
       },
     },
   },
