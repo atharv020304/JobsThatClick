@@ -15,7 +15,7 @@ import { newsLetterCron } from "./MailSendFunc/newsLetterCron.js";
 
 const app = express();
 config({path: "./config/config.env"})
-const corsOrigin = process.env.FRONTEND_URL
+const corsOrigin = process.env.FRONTEND_URL || "https://jobsthatclick-1.onrender.com/"
 
 //middleware to connect fend and bend
 app.use(cors({
