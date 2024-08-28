@@ -90,7 +90,7 @@ const userSlice = createSlice({
 export const register = (data) => async (dispatch) => {
   dispatch(userSlice.actions.registerRequest());
   try {
-    const response = await axios.post("http://localhost:2000/api/v1/user/register", data, {
+    const response = await axios.post("https://jobsthatclick.onrender.com/api/v1/user/register", data, {
       withCredentials: true,
       headers: { "Content-Type": "multipart/form-data" },
     });
@@ -100,6 +100,19 @@ export const register = (data) => async (dispatch) => {
     dispatch(userSlice.actions.registerFailed(error.response.data.message));
   }
 };
+// export const register = (data) => async (dispatch) => {
+//   dispatch(userSlice.actions.registerRequest());
+//   try {
+//     const response = await axios.post("http://localhost:2000/api/v1/user/register", data, {
+//       withCredentials: true,
+//       headers: { "Content-Type": "multipart/form-data" },
+//     });
+//     dispatch(userSlice.actions.registerSuccess(response.data));
+//     dispatch(userSlice.actions.clearAllErrors());
+//   } catch (error) {
+//     dispatch(userSlice.actions.registerFailed(error.response.data.message));
+//   }
+// };
 
 
 export const login =(data)=>async(dispatch)=>{
