@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { clearAllUpdateProfileErrors, updatePassword } from '../store/slices/updateProfileslice';
-import { getUser } from '../store/slices/userSlice';
+import { getUser } from '../store/slices/userSlice.js';
 import { FaEye, FaRegEyeSlash } from 'react-icons/fa'; // Assuming these icons are used
 
 const UpdatePassword = () => {
