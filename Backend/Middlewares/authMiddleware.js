@@ -14,11 +14,12 @@ export const isAuth = asyncHandler(async(req,res,next)=>{
 
     req.user = await User.findById(decoded.id)
 
-    //function complete and control flow transfer
+    
     next()
 });
 
-//employer can post only function 
+
+//employer can post only handled 
 export const isAuthorized = (...roles) => {
     return(req,res,next)=>{
         if(!roles.includes(req.user.role)){

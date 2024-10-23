@@ -9,7 +9,7 @@ import {
   deleteApplication, 
   fetchJobSeekerApplications, 
   fetchEmployerApplications
-} from '../store/slices/applicationSlice';
+} from '../store/slices/applicationSlice.js';
 import Spinner from './Spinner';
 
 const MyApplications = () => {

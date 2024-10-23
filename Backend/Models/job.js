@@ -49,7 +49,7 @@ const jobSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    //checks new jobs posted and letter email send to it or not
+    
     newsLettersSend:{
         type: Boolean,
         default: false

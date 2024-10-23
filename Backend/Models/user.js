@@ -54,7 +54,7 @@ const userSchema = new mongoose.Schema({
 });
 
 
-// to hash the password :-
+
 userSchema.pre("save", async function(next){
     if(!this.isModified('password')){
         next()
@@ -63,23 +63,15 @@ userSchema.pre("save", async function(next){
 })
 
 
-//retrive it again
-
 userSchema.methods.comparePassword = async function(enteredPassword){
     return await bcrypt.compare(enteredPassword,this.password)
 }
 
-
 userSchema.methods.getJWTToken = function(){
     return jwt.sign({id: this._id}, process.env.JWT_SECRET_KEY,{
         expiresIn: "5h",
-        
     })
 }
-
-
-
-
 
 
 

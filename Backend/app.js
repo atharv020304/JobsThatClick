@@ -17,6 +17,7 @@ const app = express();
 config({path: "./config/config.env"})
 const corsOrigin = process.env.FRONTEND_URL || "https://jobsthatclick-1.onrender.com/"
 
+
 //middleware to connect fend and bend
 app.use(cors({
     origin: corsOrigin,
@@ -25,14 +26,15 @@ app.use(cors({
 })
 );
 
-// middleware to get access to tokens 
+// to get access to tokens 
 app.use(cookieParser())
-//middleware to check type of data
+
+
+// to check type of data
 app.use(express.json())
 app.use(express.urlencoded({extended:true}));
 
 
-//file-upload
 app.use(
     fileUpload({
     useTempFiles: true,
@@ -49,7 +51,6 @@ newsLetterCron()
 
 connection()
 
-//middleware for error
 app.use(errorMiddleware)
 
 export default app;

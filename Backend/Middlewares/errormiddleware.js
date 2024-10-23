@@ -1,4 +1,4 @@
-// Corrected errormiddleware.js file
+
 
 class errHandler extends Error {
     constructor(statusCode, message) {
@@ -37,5 +37,5 @@ export const errorMiddleware = (err, req, res, next) => {
     });
 };
 
-// Exporting both as named exports
+
 export { errHandler};

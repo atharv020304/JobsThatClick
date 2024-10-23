@@ -154,7 +154,7 @@ export const UpdateProfile = asyncHandler(async(req,res,next)=>{
     const user = await User.findByIdAndUpdate(req.user.id,newData,{
         new:true,
         runValidators: true,
-        useFindAndModifyL: false,
+        useFindAndModify: false,
     });
 
     res.status(200).json({
